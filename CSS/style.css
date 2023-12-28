@@ -1,0 +1,208 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#login{
+    box-shadow: 3px 3px 10px rgba(0,0,0,1), -1px -1px 6px rgba(255, 255, 255, 0.4), inset 3px 3px 10px rgba(0,0,0,1), inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+    transition:box-shadow 0.5s linear ;
+}
+#noAcount {
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+    transition:box-shadow 0.5s linear ;
+}
+.wave-group {
+    position: relative;
+}
+.text-purple{
+    color: #a29bfe;
+}
+.wave-group .input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+}
+
+.wave-group .input:focus {
+    outline: none;
+}
+
+.wave-group .label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.wave-group .label-char {
+    transition: 0.2s ease all;
+    transition-delay: calc(var(--index) * .05s);
+}
+
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: #5264AE;
+}
+
+.wave-group .bar {
+    position: relative;
+    display: block;
+    width: 200px;
+}
+
+.wave-group .bar:before,.wave-group .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.wave-group .bar:before {
+    left: 50%;
+}
+
+.wave-group .bar:after {
+    right: 50%;
+}
+
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+    width: 50%;
+}
+#register{
+    border: none;
+    outline: none;
+    background-color: #6c5ce7;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 5px;
+    transition: all ease 0.1s;
+    box-shadow: 0px 5px 0px 0px #a29bfe;
+}
+#register:active {
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px 0px #a29bfe;
+}
+.btn2 {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #fefefe;
+    text-transform: uppercase;
+    color: #fefefe;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.btn2::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - -2px);
+    background-color: #212529;
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+}
+
+.btn2::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 50px);
+    background-color: #212529;
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+}
+
+.btn2:hover::before {
+    transform: translateY(-25px);
+    height: 0;
+}
+
+.btn2:hover::after {
+    transform: scaleX(0);
+    transition-delay: 0.15s;
+}   
+
+.btn2:hover {
+    border: 2px solid #fefefe;
+}
+
+.btn2 span {
+    position: relative;
+    z-index: 3;
+    color: #a29bfe;
+}
+
+#loginBtn{
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    width: fit-content;
+}
+#registerSwitch ,#loginSwitch ,#forgetPassword{
+    cursor: pointer;
+    width: fit-content;
+}
+#login,#noAcount{
+    transition: opacity 0.3s , scale 0.5;
+}
+#showPassword , #showPasswordLogin{
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    margin: 10px;
+    cursor: pointer;
+}
+#validation{
+    right: 0;
+}
+.appear{
+    z-index: 99999;
+    animation: message 5s 0.2s;
+    top: 15%;
+    transition: left 0.5s;
+    
+}
+@keyframes message {
+    from{left: -50% !important; 
+    
+    }
+    to{left: 0 !important;}
+}
+.movetoright{
+    position: absolute !important;
+    animation: logout 0.5s ease-out;
+}
+@keyframes logout {
+    from{left: 0% }
+    to{left: 100% }
+}
+.curser-pointer{
+    cursor: pointer;
+}
